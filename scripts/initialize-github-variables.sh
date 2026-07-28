@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+OWNER=""
+REPO=""
+TOKEN="${PRONATIVE_GH_TOKEN:-}"
+
+usage() {
+    echo "Usage: $0 -e <enrollment_number> [-o <owner>] [-r <repo>] [-t <token>]"
+    exit 1
+}
+
+while getopts "e:o:r:t:" opt; do
+    case $opt in
+        e) ENROLLMENT_NUMBER="$OPTARG" ;;
+        o) OWNER="$OPTARG" ;;
+        r) REPO="$OPTARG" ;;
+        t) TOKEN="$OPTARG" ;;
+        *) usage ;;
+    esac
+done
+
+if [ -z "${ENROLLMENT_NUMBER:-}" ]; then
+    echo "Error: enrollment number is required."
+    usage
+fi
+
+if [ -z "$TOKEN" ]; then
+    echo "Error: No token. Set PRONATIVE_GH_TOKEN or pass -t."
+    exit 1
+fi
+
+if [ -z "$OWNER" ] || [ -z "$REPO" ]; then
+    REMOTE=$(git remote get-url origin 2>/dev/null || true)
+    if echo "$REMOTE" | grep -qE "github\.com[:/]"; then
+        REMOTE_CLEAN=$(echo "$REMOTE" | sed 's/\.git$//')
+        OWNER=$(echo "$REMOTE_CLEAN" | sed -E 's#.*github\.com[:/]([^/]+)/([^/]+)#\1#')
+        REPO=$(echo "$REMOTE_CLEAN" | sed -E 's#.*github\.com[:/]([^/]+)/([^/]+)#\2#')
+    else
+        echo "Error: Could not detect repo from git remote. Provide -o and -r."
+        exit 1
+    fi
+fi
+
+API_BASE="https://api.github.com/repos/$OWNER/$REPO/actions/variables"
+
+declare -A ENROLLMENT_VARS=(
+    ["CONTAINERAPP_NAME"]="ca-adlc-exp-$ENROLLMENT_NUMBER"
+    ["COSMOSDB_NAME"]="cosmos-adlc-exp-$ENROLLMENT_NUMBER"
+    ["RESOURCEGROUP_NAME"]="rg-adlc-exp-2608-$ENROLLMENT_NUMBER"
+)
+
+declare -A COMMON_VARS=(
+    ["CLIENT_ID"]="429199bf-06e3-438d-8f5c-9bcb95d4249b"
+    ["SUBSCRIPTION_ID"]="4969651e-74b0-4e8a-a81d-7fbb61c3fee5"
+    ["TENANT_ID"]="eed1d2ca-7ca1-4fe3-8a1c-247a759acf93"
+    ["COSMOS_DB_REGION"]="CentralIndia"
+)
+
+# Fetch existing variables
+declare -A EXISTING
+RESP=$(curl -s -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github+json" "$API_BASE")
+
+# Parse JSON using grep and sed (works without jq)
+VARIABLES=$(echo "$RESP" | grep -o '"name": *"[^"]*"' | sed 's/"name": *"//;s/"//')
+for name in $VARIABLES; do
+    value=$(echo "$RESP" | grep -A1 "\"name\": *\"$name\"" | grep -o '"value": *"[^"]*"' | sed 's/"value": *"//;s/"//')
+    EXISTING["$name"]="$value"
+done
+
+process_var() {
+    local name="$1"
+    local value="$2"
+
+    if [ -n "${EXISTING[$name]:-}" ]; then
+        if [ "${EXISTING[$name]}" = "$value" ]; then
+            echo "SKIP (exists, same value): $name"
+        else
+            curl -s -X PATCH \
+                -H "Authorization: Bearer $TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                -H "Content-Type: application/json; charset=utf-8" \
+                -d "{\"name\":\"$name\",\"value\":\"$value\"}" \
+                "$API_BASE/$name" > /dev/null
+            echo "UPDATED: $name = $value"
+        fi
+    else
+        curl -s -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"name\":\"$name\",\"value\":\"$value\"}" \
+            "$API_BASE" > /dev/null
+        echo "CREATED: $name = $value"
+    fi
+}
+
+for name in "${!ENROLLMENT_VARS[@]}"; do
+    process_var "$name" "${ENROLLMENT_VARS[$name]}"
+done
+
+for name in "${!COMMON_VARS[@]}"; do
+    process_var "$name" "${COMMON_VARS[$name]}"
+done
+
+COUNT=$((${#ENROLLMENT_VARS[@]} + ${#COMMON_VARS[@]}))
+echo ""
+echo "Done. $COUNT variables processed for enrollment $ENROLLMENT_NUMBER."
