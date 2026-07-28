@@ -174,7 +174,7 @@ properties:
 - **Container names** (`frontend`, `backend`) — Change to match your app's container names
 - **Ports** — Update to match your Dockerfiles (`EXPOSE` values)
 - **Backend env vars** — Add/remove environment variables your backend needs
-- **`COSMOS_DB_DATABASE`** and **`COSMOS_DB_CONTAINER`** — Change the default database (`leads-db`) and container (`leads`) names to suit your data model, project design
+- **`COSMOS_DB_DATABASE`** and **`COSMOS_DB_CONTAINER`** — Change the default database (`currencyconversion-db`) and container (`currencyconversion`) names to suit your data model, project design
 - **`VITE_API_URL`** — For Vite apps, keep as `""` since Nginx proxies on the same origin. For other frameworks, set the API base URL
 - **Non-.NET backends** — Replace `ASPNETCORE_*` env vars with what your runtime needs (e.g., `PORT`, `NODE_ENV`)
 - **`ingress.targetPort`** — Must match your **frontend** container's port (the one that serves the UI)

@@ -6,7 +6,7 @@
 
 * PronativeAI Environment Doctor: Install PronativeAI environemnt doctor (follow instructions from [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor)).
 
-* GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT) with 'repo', 'workflow', 'write:packages','delete:packages', 'project' scopes enabled. Copy & keep the token handy.
+* GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT) with 'repo', 'workflow', 'write:packages','delete:packages' scopes enabled. Copy & keep the token handy.
 
 * Official Instructions to Generate a Classic PAT:
 [https://docs.github.com/en/enterprise-server@3.18/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic](https://docs.github.com/en/enterprise-server@3.18/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
@@ -57,10 +57,10 @@ code .
 
 ### Step 1: Review or Customize the Requirements
 
-If you want to modify the application business requirements for your lab, you can open `BUSINESS_SPEC.md` and customize certain sections. However, you must follow these strict guidelines:
+If you want to modify the business requirements for your lab, you can open `input-spec-agent.md` and customize certain sections. However, you must follow these strict guidelines:
 
-* **What you CAN customize:** You are free to modify **Business Idea, Business Goal,Target Users** to change the app idea, or  your custom data requirements.
-* **What you MUST leave AS IS:** Do **not** modify **Known Constraints, Existing Context**. The agent requires these exact rules to develop cosmos services, utilzie environment variables and safely push your scaffolding/Pull Requests to GitHub.
+* **What you CAN customize:** You are free to modify **Business Intent Title, Business Idea, Persona, User Need** to change the app idea, or  your custom data requirements.
+* **What you MUST leave AS IS:** Do **not** modify **Known Constraints**. The agent requires these exact rules to develop cosmos services, utilzie environment variables and safely push your scaffolding/Pull Requests to GitHub.
 
 ### Step 2: Invoke the pronative.ai ADLC Spec Agent
 
