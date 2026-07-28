@@ -62,9 +62,9 @@ If you want to modify the application business requirements for your lab, you ca
 * **What you CAN customize:** You are free to modify **Business Idea, Business Goal,Target Users** to change the app idea, or  your custom data requirements.
 * **What you MUST leave AS IS:** Do **not** modify **Known Constraints, Existing Context**. The agent requires these exact rules to develop cosmos services, utilzie environment variables and safely push your scaffolding/Pull Requests to GitHub.
 
-### Step 2: Invoke the Requirements Analyst Agent
+### Step 2: Invoke the pronative.ai ADLC Spec Agent
 
-Open your OpenCode agent chat panel from VS Code Terminal, and paste below prompt to kick off the autonomous workflow:
+Open your OpenCode agent chat panel from VS Code Terminal, enter /agent and paste below prompt to kick off the autonomous workflow:
 
 ```text
 Act as an expert Requirment Analyst and process the spec from 'BUSINESS_SPEC.md' file. Perfoem a mandatory pre-flight verification check as mentioned in 'Pre-flight_Verification.md' file.
