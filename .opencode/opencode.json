@@ -1,5 +1,29 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "azure": {
+      "options": {
+        "apiKey": "",
+        "resourceName": "aif-adlc-blr"
+      },
+      "models": {
+        "gpt-5.4-nano": {
+          "name": "pronative.ai GPT"
+        },
+        "DeepSeek-V4-Pro": {
+          "name": "pronative.ai DeepSeek"
+        }
+      }
+    },
+    "opencode": {
+      "models": {
+        "big-pickle": {
+          "name": "big-pickle"
+        }
+      }
+    }
+  },
+  "model": "opencode/big-pickle",
   "plugin": [
     "@devtheops/opencode-plugin-otel"
   ],
@@ -7,3 +31,4 @@
     "openTelemetry": true
   }
 }
+ 
