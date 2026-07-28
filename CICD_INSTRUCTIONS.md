@@ -237,12 +237,12 @@ This creates these **Actions variables**:
 
 ### Secrets (GitHub Actions > Secrets)
 
-These must be added manually (cannot be created via API without encryption):
+These must be added manually :
 
 | Secret | Description |
 |--------|-------------|
 | `CLIENT_SECRET` | Service principal secret (for Azure auth will be shared by Presenter) |
-| `GHCR_PAT` | GitHub PAT with `read:packages` scope (for Container App to pull images from GHCR) |
+| `GHCR_PAT` | GitHub classic PAT generated earlier|
 
 ### Azure Resources Required
 

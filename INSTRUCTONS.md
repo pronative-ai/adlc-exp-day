@@ -33,7 +33,17 @@ echo 'export PRONATIVE_GH_TOKEN="your_personal_access_token_here"' >> ~/.bashrc
 
 ```
 
-### Step 2: Clone the forked repo locally and open it in VS Code:
+### Step 2: Secrets (GitHub Actions > Secrets)
+
+These must be added manually:
+
+| Secret | Description |
+|--------|-------------|
+| `CLIENT_SECRET` | Service principal secret (for Azure auth will be shared by Presenter) |
+| `GHCR_PAT` | GitHub classic PAT generated earlier|
+
+
+### Step 3: Clone the forked repo locally and open it in VS Code:
 
 ```bash
 git clone https://github.com/<your-github-username>/adlc-exp-day-step2.git
