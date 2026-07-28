@@ -38,7 +38,9 @@ Verify it is set:
 
 ## Initialize GitHub Variables
 
-Creates/updates 7 GitHub Actions variables for a given enrollment number.
+Creates/updates 7 GitHub Actions variables for a given enrollment.
+
+The script parses the enrollment ID from the `.env` file (or `-e` parameter) and extracts the trailing number. If the number is less than 1000, it adds 1000 to make it a 4-digit number.
 
 **3 enrollment-specific:**
 - `CONTAINERAPP_NAME` = `ca-adlc-exp-{enrollment}`
@@ -54,24 +56,37 @@ Creates/updates 7 GitHub Actions variables for a given enrollment number.
 ### Usage
 
 ```bash
-# macOS/Linux (from repo root)
-./scripts/initialize-github-variables.sh -e 1021
+# Read from .env file (default)
+./scripts/initialize-github-variables.sh
 
-# Windows Git Bash / WSL
-bash scripts/initialize-github-variables.sh -e 1021
+# Pass enrollment ID directly
+./scripts/initialize-github-variables.sh -e ST-2608-adlc1
 
-# Windows PowerShell
-.\scripts\Initialize-GitHubVariables.ps1 -EnrollmentNumber 1021
+# Windows PowerShell (reads from .env)
+.\scripts\Initialize-GitHubVariables.ps1
+
+# Pass enrollment ID directly (PowerShell)
+.\scripts\Initialize-GitHubVariables.ps1 -EnrollmentId ST-2608-adlc1
 
 # Override owner/repo (auto-detected from git remote by default)
-./scripts/initialize-github-variables.sh -e 1021 -o other-owner -r other-repo
+./scripts/initialize-github-variables.sh -e ST-2608-adlc1 -o other-owner -r other-repo
 ```
+
+### Enrollment ID Parsing
+
+| Input Enrollment ID | Extracted Number | Result |
+|---------------------|------------------|--------|
+| `ST-2608-adlc1` | `1` | `1001` (1 + 1000) |
+| `ST-2608-adlc21` | `21` | `1021` (21 + 1000) |
+| `ST-2608-021` | `21` | `1021` (21 + 1000) |
+| `ST-2608-1021` | `1021` | `1021` (used as-is) |
+| `1021` | `1021` | `1021` (used as-is) |
 
 ### Parameters
 
 | Parameter | Required | Description |
 |-----------|----------|-------------|
-| `-e` / `-EnrollmentNumber` | Yes | Enrollment number (e.g., 1021) |
+| `-e` / `-EnrollmentId` | No | Enrollment ID (reads from `.env` if not provided) |
 | `-o` / `-Owner` | No | GitHub owner (auto-detected) |
 | `-r` / `-Repo` | No | GitHub repo (auto-detected) |
 | `-t` / `-Token` | No | GitHub PAT (uses `PRONATIVE_GH_TOKEN` env var) |
@@ -121,7 +136,7 @@ If VS Code terminal is **Git Bash**, use the `.sh` scripts directly.
 To run `.sh` from PowerShell:
 
 ```powershell
-& "C:\Program Files\Git\bin\bash.exe" -c "./scripts/initialize-github-variables.sh -e 1021"
+& "C:\Program Files\Git\bin\bash.exe" -c "./scripts/initialize-github-variables.sh"
 ```
 
 ### macOS / Linux

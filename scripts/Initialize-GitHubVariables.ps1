@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory)]
-    [string]$EnrollmentNumber,
+    [Parameter()]
+    [string]$EnrollmentId,
 
     [Parameter()]
     [string]$Owner = $env:OWNER,
@@ -14,6 +14,40 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+function Get-EnrollmentNumber {
+    param(
+        [string]$EnrollmentId
+    )
+
+    if ($EnrollmentId -match '(\d+)$') {
+        $trailingNumber = [int]$Matches[1]
+        if ($trailingNumber -lt 1000) {
+            return $trailingNumber + 1000
+        }
+        return $trailingNumber
+    }
+
+    Write-Error "No trailing number found in enrollment ID: $EnrollmentId"
+    exit 1
+}
+
+if (-not $EnrollmentId) {
+    $envFile = Join-Path $PSScriptRoot "..\.env"
+    if (Test-Path $envFile) {
+        $envContent = Get-Content $envFile | Where-Object { $_ -match '^ENROLLMENT_ID=' }
+        if ($envContent) {
+            $EnrollmentId = ($envContent -split '=', 2)[1].Trim()
+        }
+    }
+}
+
+if (-not $EnrollmentId) {
+    Write-Error "Enrollment ID is required. Provide -EnrollmentId or set ENROLLMENT_ID in .env"
+    exit 1
+}
+
+$EnrollmentNumber = Get-EnrollmentNumber -EnrollmentId $EnrollmentId
 
 if (-not $Token) {
     Write-Error "No token. Set PRONATIVE_GH_TOKEN or pass -Token."
@@ -88,6 +122,6 @@ foreach ($kv in $allVars.GetEnumerator()) {
     }
 }
 
-Write-Host "`nDone. $(($allVars.Count)) variables processed for enrollment $EnrollmentNumber."
+Write-Host "`nDone. $(($allVars.Count)) variables processed for enrollment $EnrollmentId (number: $EnrollmentNumber)."
 
 

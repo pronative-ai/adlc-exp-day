@@ -4,15 +4,36 @@ set -euo pipefail
 OWNER=""
 REPO=""
 TOKEN="${PRONATIVE_GH_TOKEN:-}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENV_FILE="${SCRIPT_DIR}/../.env"
 
 usage() {
-    echo "Usage: $0 -e <enrollment_number> [-o <owner>] [-r <repo>] [-t <token>]"
+    echo "Usage: $0 [-e <enrollment_id>] [-o <owner>] [-r <repo>] [-t <token>]"
+    echo ""
+    echo "If -e is not provided, reads ENROLLMENT_ID from .env file."
     exit 1
+}
+
+parse_enrollment_number() {
+    local enrollment_id="$1"
+    local trailing_number
+    trailing_number=$(echo "$enrollment_id" | grep -oE '[0-9]+$' || echo "")
+
+    if [ -z "$trailing_number" ]; then
+        echo "Error: No trailing number found in enrollment ID: $enrollment_id" >&2
+        exit 1
+    fi
+
+    if [ "$trailing_number" -lt 1000 ]; then
+        echo $((trailing_number + 1000))
+    else
+        echo "$trailing_number"
+    fi
 }
 
 while getopts "e:o:r:t:" opt; do
     case $opt in
-        e) ENROLLMENT_NUMBER="$OPTARG" ;;
+        e) ENROLLMENT_ID="$OPTARG" ;;
         o) OWNER="$OPTARG" ;;
         r) REPO="$OPTARG" ;;
         t) TOKEN="$OPTARG" ;;
@@ -20,10 +41,18 @@ while getopts "e:o:r:t:" opt; do
     esac
 done
 
-if [ -z "${ENROLLMENT_NUMBER:-}" ]; then
-    echo "Error: enrollment number is required."
+if [ -z "${ENROLLMENT_ID:-}" ]; then
+    if [ -f "$ENV_FILE" ]; then
+        ENROLLMENT_ID=$(grep -E '^ENROLLMENT_ID=' "$ENV_FILE" | cut -d'=' -f2- | tr -d '[:space:]')
+    fi
+fi
+
+if [ -z "${ENROLLMENT_ID:-}" ]; then
+    echo "Error: Enrollment ID is required. Provide -e or set ENROLLMENT_ID in .env"
     usage
 fi
+
+ENROLLMENT_NUMBER=$(parse_enrollment_number "$ENROLLMENT_ID")
 
 if [ -z "$TOKEN" ]; then
     echo "Error: No token. Set PRONATIVE_GH_TOKEN or pass -t."
@@ -105,4 +134,4 @@ done
 
 COUNT=$((${#ENROLLMENT_VARS[@]} + ${#COMMON_VARS[@]}))
 echo ""
-echo "Done. $COUNT variables processed for enrollment $ENROLLMENT_NUMBER."
+echo "Done. $COUNT variables processed for enrollment $ENROLLMENT_ID (number: $ENROLLMENT_NUMBER)."
