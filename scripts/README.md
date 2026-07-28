@@ -1,6 +1,6 @@
 # Scripts
 
-Helper scripts for GitHub repo variable management and issue creation.
+Helper scripts for GitHub repo variable management.
 
 ## Prerequisites
 
@@ -12,9 +12,7 @@ Helper scripts for GitHub repo variable management and issue creation.
 | File | Description |
 |------|-------------|
 | `initialize-github-variables.sh` | Create/update GitHub Actions variables for a given enrollment |
-| `new-github-issue.sh` | Create a GitHub issue from text or markdown file |
 | `Initialize-GitHubVariables.ps1` | PowerShell version of variable initializer |
-| `New-GitHubIssue.ps1` | PowerShell version of issue creator |
 
 ## Setup
 
@@ -23,11 +21,6 @@ Set `PRONATIVE_GH_TOKEN` as a **system environment variable** (user level) so it
 ```powershell
 # Windows PowerShell
 [System.Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "ghp_xxxxxxxxxxxx", "User")
-```
-
-```bash
-# Linux/macOS (add to ~/.bashrc or ~/.zshrc)
-export PRONATIVE_GH_TOKEN="ghp_xxxxxxxxxxxx"
 ```
 
 Verify it is set:
@@ -95,37 +88,6 @@ The script parses the enrollment ID from the `.env` file (or `-e` parameter) and
 
 Running the same command twice skips variables with matching values. If a variable exists with a different value, it is updated.
 
-## Create GitHub Issue
-
-### Usage
-
-```bash
-# macOS/Linux
-./scripts/new-github-issue.sh -T "Bug title" -b "Description here"
-
-# From markdown file
-./scripts/new-github-issue.sh -T "Bug title" -f issue.md
-
-# Windows PowerShell
-.\scripts\New-GitHubIssue.ps1 -Title "Bug title" -Body "Description here"
-
-# From markdown file (PowerShell)
-.\scripts\New-GitHubIssue.ps1 -Title "Bug title" -FilePath .\issue.md
-```
-
-### Parameters
-
-| Parameter | Required | Description |
-|-----------|----------|-------------|
-| `-T` / `-Title` | Yes | Issue title |
-| `-b` / `-Body` | Yes* | Issue body (text) |
-| `-f` / `-FilePath` | Yes* | Path to markdown file for body |
-| `-o` / `-Owner` | No | GitHub owner (auto-detected) |
-| `-r` / `-Repo` | No | GitHub repo (auto-detected) |
-| `-t` / `-Token` | No | GitHub PAT (uses `PRONATIVE_GH_TOKEN` env var) |
-
-*Either `-b` or `-f` is required, but not both.
-
 ## VS Code Integration
 
 ### Windows
@@ -138,7 +100,3 @@ To run `.sh` from PowerShell:
 ```powershell
 & "C:\Program Files\Git\bin\bash.exe" -c "./scripts/initialize-github-variables.sh"
 ```
-
-### macOS / Linux
-
-Run `.sh` scripts directly in terminal. Use `.ps1` only if PowerShell Core (`pwsh`) is installed.
