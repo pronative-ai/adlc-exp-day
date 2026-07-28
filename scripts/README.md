@@ -5,7 +5,7 @@ Helper scripts for GitHub repo variable management and issue creation.
 ## Prerequisites
 
 - **Git** installed (brings Git Bash on Windows)
-- Environment variable `PRONATIVE_GH_TOKEN` set with a GitHub PAT
+- System Environment variable `PRONATIVE_GH_TOKEN` set with a GitHub PAT
 
 ## Files
 
