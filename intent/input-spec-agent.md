@@ -43,6 +43,6 @@ reinterpret)*
 - Include `Azure.ResourceManager` and `Azure.ResourceManager.CosmosDB`
   packages to handle programmatic database and container provisioning
   (Required RBAC roles are already in place).
-- Implement minimal scaffolding of frontend and backend projects along with any changes required to github workflows and related files, then commit to `main` branch of the repository.
-- Create and checkout feature branch for the repository. Full feature requirements should be implemented in the feature branch.
-- Utilize environment variables listed in `docs\CONTAINER_ENVIRONMENT_VARIABLES.md` as needed while developing services.
+- Scaffold the minimal frontend and backend project structures, update the corresponding GitHub workflows and configuration files, commit these base setup changes directly to the `main` branch, and push the branch to the remote GitHub repository.
+- Create and switch to a new feature branch originating from the updated `main` branch, fully implement all specified feature requirements within this branch, commit the completed implementation, and push the feature branch to the remote GitHub repository.
+- Reference and apply the environment variables defined in `docs\CONTAINER_ENVIRONMENT_VARIABLES.md` as required throughout the development and configuration of the services.
