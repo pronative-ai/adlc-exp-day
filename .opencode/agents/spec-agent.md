@@ -8,20 +8,11 @@ description: >-
   needs the remaining technical fields (context, scope, feature constraints,
   expected outcome) added by someone who knows the codebase.
 mode: all
-model: azure/DeepSeek-V4-Pro   # match this to whatever provider ID you configured for
+model: azure/gpt-5.4   # match this to whatever provider ID you configured for
                                  # the aif-adlc-blr endpoint in opencode.json — see AGENTS.md
 temperature: 0.2                 # low on purpose: this is the "consistent and repeatable"
                                  # agent — the whole point is that similar ideas produce
                                  # similarly-shaped specs, not creative variation
-tools:
-  write: true
-  read: false
-  edit: false
-  bash: false
-  webfetch: false
-  task: false
-permission:
-  write: allow
 ---
 
 # Role

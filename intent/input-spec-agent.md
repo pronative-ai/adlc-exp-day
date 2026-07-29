@@ -43,7 +43,3 @@ reinterpret)*
 - Include `Azure.ResourceManager` and `Azure.ResourceManager.CosmosDB`
   packages to handle programmatic database and container provisioning
   (Required RBAC roles are already in place).
-- Refer and utilize GitHub Actions variables mentioned in `docs\CICD-OVERVIEW.md` while developing services
-- keep changes to exisiting YML, YAML files minimal on need basis. Refer `docs\CICD-OVERVIEW.md`
-- Scaffold the project along with any changes required to ci.yml and ci-cd.yml and push to default branch of the repo.
-- Business requirements implementation should be developed, committed in a feature branch created out of default branch post scaffolding is pushed to default branch.
