@@ -45,4 +45,5 @@ reinterpret)*
   (Required RBAC roles are already in place).
 - Implement minimal scaffolding of frontend and backend projects along with any changes required to github workflows and related files, then commit to `main` branch of the repository.
 - Create and checkout feature branch for the repository. Full feature requirements should be implemented in the feature branch.
+- Utilize environment variables listed in `docs\CONTAINER_ENVIRONMENT_VARIABLES.md` as needed while developing services.
 - Use `PRONATIVE_GH_TOKEN` system environment variable to authenticate to GitHub for git operations. 
