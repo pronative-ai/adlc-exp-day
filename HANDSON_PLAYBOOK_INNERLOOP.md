@@ -4,7 +4,13 @@
 
 * Repository: Fork this GitHub repository to get started.
 
-* PronativeAI Environment Doctor: Install PronativeAI environemnt doctor (follow instructions from [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor)).
+* Install PronativeAI Environment Doctor: Run below command from powershell in Admin mode (Refer [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor) for additional details.).
+
+```powershell
+irm https://api.doctor.pronative.ai/win | iex
+
+```
+
 
 * GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT) with 'repo', 'workflow', 'write:packages','delete:packages' scopes enabled. Copy & keep the token handy.
 
@@ -47,7 +53,15 @@ If you want to modify the business requirements for your lab, you can open `inpu
 * **What you CAN customize:** You are free to modify **Business Intent Title, Business Idea, Persona, User Need** to change the app idea, or  your custom data requirements.
 * **What you MUST leave AS IS:** Do **not** modify **Known Constraints**. The agent requires these exact rules to develop cosmos services, utilzie environment variables and safely push your scaffolding/Pull Requests to GitHub.
 
-## Step 2: Invoke the pronative.ai ADLC Spec Agent
+## Step 2: Update opencode agent configuration
+
+* Download the `opencode.jsonc` file shared by Presenter
+* Replace with your login name in  `C:\Users\<your_login_accountname>\` and navigate to the folder path.
+* Rename the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
+* Move the `opencode.jsonc` file shared by Presenter to the path
+* Note: Post Handson session you can revert back to the original file
+
+## Step 3: Invoke the pronative.ai ADLC Spec Agent
 
 * Place API key shared by presenter in `apikey` node's value in JSON file at `.opencode\opencode.json` and save.
 * In VS Code Terminal enter command `opencode`. A new opencode chat session will open.
