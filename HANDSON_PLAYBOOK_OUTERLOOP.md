@@ -1,0 +1,41 @@
+# Instructions and Guidelines
+
+### Step 1: Open the GitHub repo in VS Code (where inner loop ran) and then Run make file to setup configuration required to collect Agent metrics:
+
+* Open the `make` file in root folder
+* Update placeholder for participant with your enrollment id  (e.g. replace <ENROLLMENT_ID> with ST-2608-adlc101) and save the file
+* run the command `make run` from VS Code terminal
+* Note: Remember to run above command each time when VS code is reopned/restarted
+
+### Step 2: Secrets (GitHub Actions > Secrets)
+
+These must be added manually:
+
+| Secret | Description |
+|--------|-------------|
+| `CLIENT_SECRET` | Service principal secret (for Azure auth will be shared by Presenter) |
+| `GHCR_PAT` | GitHub classic PAT generated earlier|
+
+(or)
+
+```sh
+gh secret set  GHCR_PAT --body <generated-earlier>
+gh secret set CLIENT_SECRET --body <client-secret>
+```
+
+### Step 3: Run script to create variables required for outerloop:
+
+* Follow instructions env.example in root folder to save .env
+* Navigate to `scripts` folder from VS Code terminal
+* Run `Initialize-GitHubVariables.ps1`
+
+## Triggering the Outerlopp
+
+### Step 1: Create pull request from feature branch to main branch in GitHub
+
+This will trigger the CI in GitHub repo. Code review agent will review the code provide comments in pull request description. Critic Agent will review the code review agent's analysis and provide its analysis. The CI's run can be viewed from GitHub repo's actions.
+
+## Step 2: Merge the pull request created in previous step
+This will trigger the CD in GitHub repo. The CD's run can be viewed from GitHub repo's actions. The CD run will build both frontend and backend. Prepare docker containers and push to registry, then it will deploy to the azure container app. 
+
+Refer GitHUb Action run's summary. Azure Container App URL can be found. Use it in the browser to view the frontend application UI.

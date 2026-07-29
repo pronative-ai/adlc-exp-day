@@ -22,17 +22,7 @@
 
 ```
 
-### Step 2: Secrets (GitHub Actions > Secrets)
-
-These must be added manually:
-
-| Secret | Description |
-|--------|-------------|
-| `CLIENT_SECRET` | Service principal secret (for Azure auth will be shared by Presenter) |
-| `GHCR_PAT` | GitHub classic PAT generated earlier|
-
-
-### Step 3: Clone the forked repo locally and open it in VS Code:
+### Step 2: Clone the forked repo locally and open it in VS Code:
 
 ```bash
 git clone https://github.com/<your-github-username>/adlc-exp-day-step2.git
@@ -48,12 +38,6 @@ code .
 * run the command `make run` from VS Code terminal
 * Note: Remember to run above command each time when VS code is reopned/restarted
 
-### Step 4: Run script to create variables required for outerloop:
-
-* Follow instructions env.example in root folder to save .env
-* Navigate to `scripts` folder from VS Code terminal
-* Run `Initialize-GitHubVariables.ps1`
-
 ## Triggering the AI Agent
 
 ### Step 1: Review or Customize the Requirements
@@ -68,8 +52,8 @@ If you want to modify the business requirements for your lab, you can open `inpu
 * Place API key shared by presenter in `apikey` node's value in JSON file at `.opencode\opencode.json` and save.
 * In VS Code Terminal enter command `opencode`. A new opencode chat session will open.
 * Type `/agents` in the chat panel.
-* Enter `pronative` in the search box.
-* Scroll through the agent list to select `pronative.ai GPT`.
+* Enter `spec-agent` in the search box.
+* Scroll through the agent list to select `spec-agent`.
 * Press enter to confirm your selection.
 * Paste the below prompt below to kick off the spec agent (a markdown file appears under the spec folder once processing is complete).
 
@@ -80,13 +64,16 @@ Process `intent\input-spec-agent.md` file.
 
 ## Step 3: Invoke the pronative.ai ADLC Coding Agent
 
-* After step 1 is finished, then type `/models`.
+* After step 1 is finished, then type `/agents`.
+* Enter `build` in the search box.
+* Scroll through the agent list to select `build`.
+* Type `/models` in the chat panel.
 * Enter `pronative` in the search box.
 * Scroll through the agent list to select `pronative.ai GPT Nano`.
 * Press enter to confirm your selection.
 * Paste the below prompt below to kick off the coding agent.
 
 ```text
-Implement `spec` folder.
+Implement the plan from spec md file under `spec` folder.
 
 ```
