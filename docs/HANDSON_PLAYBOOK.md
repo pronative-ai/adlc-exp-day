@@ -15,17 +15,6 @@
 
 ### Step 1: Configure your GitHub authentication token as a system environment variable:
 
-**Linux / macOS:**
-
-```bash
-# For Zsh (Default on macOS)
-echo 'export PRONATIVE_GH_TOKEN="your_personal_access_token_here"' >> ~/.zshrc
-
-# For Bash
-echo 'export PRONATIVE_GH_TOKEN="your_personal_access_token_here"' >> ~/.bashrc
-
-```
-
 **Windows PowerShell:**
 
 ```powershell
@@ -52,6 +41,18 @@ code .
 
 ```
 
+### Step 3: Run make file to setup configuration required to collect Agent metrics:
+
+* Open the `make` file in root folder
+* Update placeholder for participant with your enrollment id  (e.g. replace <ENROLLMENT_ID> with ST-2608-adlc101) and save the file
+* run the command `make run` from VS Code terminal
+* Note: Remember to run above command each time when VS code is reopned/restarted
+
+### Step 4: Run script to create variables required for outerloop:
+
+* Follow instructions env.example in root folder to save .env
+* Navigate to `scripts` folder from VS Code terminal
+* Run `Initialize-GitHubVariables.ps1`
 
 ## Triggering the AI Agent
 
