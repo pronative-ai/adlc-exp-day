@@ -65,7 +65,8 @@ If you want to modify the business requirements for your lab, you can open `inpu
 
 ## Step 2: Invoke the pronative.ai ADLC Spec Agent
 
-* Open your OpenCode agent chat panel from the VS Code Terminal.
+* Place API key shared by presenter in `apikey` node's value in JSON file at `.opencode\opencode.json` and save.
+* In VS Code Terminal enter command `opencode`. A new opencode chat session will open.
 * Type `/agents` in the chat panel.
 * Enter `pronative` in the search box.
 * Scroll through the agent list to select `pronative.ai GPT`.
@@ -77,7 +78,7 @@ Process `intent\input-spec-agent.md` file.
 
 ```
 
-## Step 2: Invoke the pronative.ai ADLC Coding Agent
+## Step 3: Invoke the pronative.ai ADLC Coding Agent
 
 * After step 1 is finished, then type `/models`.
 * Enter `pronative` in the search box.
