@@ -29,7 +29,7 @@ gh secret set CLIENT_SECRET --body <client-secret>
 * Navigate to `scripts` folder from VS Code terminal
 * Run `Initialize-GitHubVariables.ps1`
 
-## Triggering the Outerlopp
+## Triggering the Outerloop
 
 ### Step 1: Create pull request from feature branch to main branch in GitHub
 
