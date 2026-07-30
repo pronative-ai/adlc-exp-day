@@ -2,8 +2,6 @@
 
 ## Prerequisites
 
-* Repository: Fork this GitHub repository to get started.
-
 * Install PronativeAI Environment Doctor: Run below command from powershell in Admin mode (Refer [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor) for additional details.).
 
 ```powershell
