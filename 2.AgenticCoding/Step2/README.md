@@ -97,8 +97,9 @@ Process `intent\input-spec-agent.md` file.
 
 ### 🌿 3️⃣ Prepare your feature branch for Implementation
 
+> [!IMPORTANT]
+> Create and switch to a new feature branch
 ```bash
-# Create and switch to a new feature branch
 git checkout -b feature/agent-build
 ```
 
@@ -116,6 +117,9 @@ Implement the plan from spec md file under `spec` folder.
 
 ```bash
 git add .
+```
+
+```bash
 git commit -m "feat: Feature implemented by Agentic Coding Agent using pronative.ai GPT Nano model"
 ```
 
