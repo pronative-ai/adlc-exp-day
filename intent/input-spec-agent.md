@@ -21,8 +21,7 @@ Agent's technical elaboration, not from this layer.
 
 ---
 
-**🔒 Known Constraints** *(fixed — carry through unchanged, do not
-reinterpret)*
+**🔒 Known Constraints** *(fixed — carry through unchanged, do not reinterpret)*
 
 - Frontend must read `VITE_API_URL` dynamically at container runtime using
   a generic entrypoint script placeholder replacement to allow native
@@ -43,6 +42,4 @@ reinterpret)*
 - Include `Azure.ResourceManager` and `Azure.ResourceManager.CosmosDB`
   packages to handle programmatic database and container provisioning
   (Required RBAC roles are already in place).
-- Scaffold the minimal frontend and backend project structures, update the corresponding GitHub workflows and configuration files, commit these base setup changes directly to the `main` branch, and push the branch to the remote GitHub repository.
-- Create and switch to a new feature branch originating from the updated `main` branch, fully implement all specified feature requirements within this branch, commit the completed implementation, and push the feature branch to the remote GitHub repository.
 - Reference and apply the environment variables defined in `docs\CONTAINER_ENVIRONMENT_VARIABLES.md` as required throughout the development and configuration of the services.
