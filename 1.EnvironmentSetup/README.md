@@ -9,7 +9,6 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ```
 
-
 * GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT) with 'repo', 'workflow', 'write:packages','delete:packages' scopes enabled. Copy & keep the token handy.
 
 * Official Instructions to Generate a Classic PAT:
@@ -25,3 +24,13 @@ irm https://api.doctor.pronative.ai/win | iex
 [Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "your_personal_access_token_here", "User")
 
 ```
+
+## Step 2: Setup custom models in your Local OpenCode
+
+### Update opencode pronative.ai Models configuration
+
+* Download the `opencode.jsonc` file shared by Presenter
+* Replace with your login name in  `C:\Users\<your_login_accountname>\.config\opencode` and navigate to the folder path.
+* Rename the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
+* Move the `opencode.jsonc` file shared by Presenter to the path
+* Note: Post Handson session you can revert back to the original file
