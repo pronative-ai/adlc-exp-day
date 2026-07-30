@@ -1,25 +1,9 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "azure": {
-      "options": {
-        "apiKey": "",
-        "resourceName": "aif-adlc-blr"
-      },
-      "opencode": {
-        "models": {
-          "big-pickle": {
-            "name": "big-pickle"
-          }
-        }
-      }
-    },
-    "model": "opencode/big-pickle",
-    "plugin": [
-      "@devtheops/opencode-plugin-otel"
-    ],
-    "experimental": {
-      "openTelemetry": true
-    }
+  "plugin": [
+    "@devtheops/opencode-plugin-otel"
+  ],
+  "experimental": {
+    "openTelemetry": true
   }
 }
