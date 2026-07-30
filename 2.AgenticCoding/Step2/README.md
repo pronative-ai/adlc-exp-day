@@ -10,8 +10,13 @@
 ## 🔧 Step 1: Fork and Clone the Repo Locally
 
 ### 🍴 Forking the Repository
-1. Log in to your **GitHub** account.
-2. Navigate to the **pronative.ai** repository URL: `https://github.com/pronative-ai/adlc-exp-day-step2`.
+1. Log in to your personal **GitHub** account.
+
+2. Navigate to the **pronative.ai** repository URL: 
+```bash
+https://github.com/pronative-ai/adlc-exp-day-step2
+```
+
 3. Click the <kbd>Fork</kbd> button in the top-right corner of the GitHub page.
 
 ### 📥 Cloning to Your Machine
