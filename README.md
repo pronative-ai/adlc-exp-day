@@ -1,1 +1,0 @@
-# adlc-exp-day
