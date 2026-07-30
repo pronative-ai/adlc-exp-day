@@ -22,13 +22,15 @@ Click **Generate new token**.
 
 Under Token name, enter a name for the token.
 
-Enable the following **SCOPES** - 'repo', 'workflow', 'write:packages','delete:packages'.
+Enable the following **SCOPES** - `repo`, `workflow`, `write:packages`,`delete:packages`.
 
 Finally, scroll down to the end and click **Generate Token** button
 
 **NOTE:**  Copy & keep the `TOKEN` handy
 
-GitHub-PAT.png
+![](../images/GitHub-PAT.png)
+
+
 
 ### Step 3: Configure your GitHub authentication token as a system environment variable:
 
