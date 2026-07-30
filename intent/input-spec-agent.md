@@ -48,3 +48,4 @@ Agent's technical elaboration, not from this layer.
   - CRUD (and data-plane creation if needed) must be done via the Cosmos SDK (data-plane) using token-based Managed Identity credentials; access keys must not be used.
   - After ARM attempt, startup must run token-authenticated data-plane `CreateDatabaseIfNotExistsAsync` and `CreateContainerIfNotExistsAsync` and only proceed if the database/container are available (either already exist or were created). If token-authenticated data-plane create-if-not-exists fails, startup must fail.
 - Map and bind all configuration values, including `AZURE_MANAGED_IDENTITY_CLIENT_ID`, endpoint URLs, and resource names, directly from the environment variables **using the exact keys** defined in `docs\CONTAINER_ENVIRONMENT_VARIABLES.md` without using local settings configuration files as fallbacks.
+
