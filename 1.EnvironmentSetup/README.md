@@ -79,5 +79,5 @@ irm https://api.doctor.pronative.ai/win | iex
 * **Run Validation Test:** Open **Windows PowerShell** (do not use the standard Command Prompt) and execute the following command:
 
 ```powershell
-curl -sI -H "Authorization: token \$env:PRONATIVE_GH_TOKEN" https://api.github.com/user
+curl -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
 ```
