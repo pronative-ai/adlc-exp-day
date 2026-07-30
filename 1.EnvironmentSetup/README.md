@@ -60,8 +60,11 @@ Finally, scroll down to the end and click **Generate Token** button
 
 ### GitHub Connectivity & Scope Validation Test
 * GitHub Connectivity & Scope Validation Test
+
+* NOTE - Open **Windows Powershell** (Not the COMMAND PROMPT)
+
 ```bash
-curl -sI -H "Authorization: token %PRONATIVE_GH_TOKEN%" https://api.github.com/user
+curl -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
 ```
 
 
