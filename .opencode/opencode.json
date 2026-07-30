@@ -6,17 +6,6 @@
         "apiKey": "",
         "resourceName": "aif-adlc-blr"
       },
-      "models": {
-        "gpt-5.4-nano": {
-          "name": "pronative.ai GPT Nano"
-        },"gpt-5.4": {
-          "name": "pronative.ai GPT"
-        },
-        "DeepSeek-V4-Pro": {
-          "name": "pronative.ai DeepSeek"
-        }
-      }
-    },
     "opencode": {
       "models": {
         "big-pickle": {
