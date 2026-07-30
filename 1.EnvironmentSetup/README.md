@@ -32,7 +32,7 @@ irm https://api.doctor.pronative.ai/win | iex
 7. **Finalize Generation:** Scroll down to the end of the page and click the <kbd>Generate Token</kbd> button.
 
 > [!IMPORTANT]
-> Copy & keep the `TOKEN` handy. You will not be able to see it again.
+> Copy & keep the `TOKEN` handy for **next step 3**. You will not be able to see it again.
 
 ![](../images/GitHub-PAT.png)
 
