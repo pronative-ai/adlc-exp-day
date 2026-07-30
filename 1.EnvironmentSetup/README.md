@@ -10,10 +10,23 @@ irm https://api.doctor.pronative.ai/win | iex
 ```
 ### Step 2: Generate a GitHub Personal Access Token (PAT):
 
-* GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT) with 'repo', 'workflow', 'write:packages','delete:packages' scopes enabled. Copy & keep the token handy.
+* GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT).
 
-* Official Instructions to Generate a Classic PAT:
-[https://docs.github.com/en/enterprise-server@3.18/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic](https://docs.github.com/en/enterprise-server@3.18/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
+In the upper-right corner of any page on GitHub, click your **profile** picture, then click  **Settings**.
+
+In the left sidebar, click  **Developer settings**.
+
+In the left sidebar, under  **Personal access tokens**, click **Fine-grained tokens**.
+
+Click **Generate new token**.
+
+Under Token name, enter a name for the token.
+
+Enable the following **SCOPES** - 'repo', 'workflow', 'write:packages','delete:packages'.
+
+Finally, scroll down to the end and click **Generate Token** button
+
+**NOTE:**  Copy & keep the `TOKEN` handy
 
 
 ### Step 3: Configure your GitHub authentication token as a system environment variable:
