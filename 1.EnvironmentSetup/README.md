@@ -1,5 +1,9 @@
 # 🛠️ INSTALLATION, CONFIGURATION and VERIFICATION
 
+> [!NOTE]
+> When you have issues with Installation, configuration or verification, you can refer to [FAQ](https://github.com/pronative-ai/adlc-exp-day/blob/main/1.EnvironmentSetup/Troubleshooting/FAQ.md#-faq---verification-check).
+---
+
 ## 🏃 Step 1: pronative.ai Environment Doctor
 
 * **Install Environment Doctor:** Run the below command from **POWERSHELL** in `ADMIN` mode. 
@@ -66,7 +70,7 @@ irm https://api.doctor.pronative.ai/win | iex
 # ✅ VERIFICATION 
 
 > [!NOTE]
-> If any verification step fails, please refer to the **FAQ** section for step-by-step troubleshooting.
+> If any verification step fails, please refer to the [FAQ](https://github.com/pronative-ai/adlc-exp-day/blob/main/1.EnvironmentSetup/Troubleshooting/FAQ.md#-faq---verification-check). section for step-by-step troubleshooting.
 
 ### 🔍 Environment Presence Check
 * **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
