@@ -36,13 +36,18 @@ irm https://api.doctor.pronative.ai/win | iex
 
 **NOTE:** Post session you can revert back to the original file ( `opencode.jsonc.bkp`)
 
-# Verification
+# VERIFICATION (Refer to FAQ for troubleshooting) 
 
 ### Environment Presence Check
-* Verify PRONATIVE_GH_TOKEN
+* Verify **PRONATIVE_GH_TOKEN** in ENVIRONMENT VARIABLES
+
 
 ### GitHub Connectivity & Scope Validation Test
 * GitHub Connectivity & Scope Validation Test
 ```bash
 curl -sI -H "Authorization: token $PRONATIVE_GH_TOKEN" https://api.github.com/user
 ```
+
+
+
+
