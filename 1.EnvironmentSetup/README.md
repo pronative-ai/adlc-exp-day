@@ -1,72 +1,74 @@
-# INSTALLATION, CONFIGURATION and VERIFICATION
+# 🛠️ INSTALLATION, CONFIGURATION and VERIFICATION
 
-## Step 1: pronative.ai Environment Doctor
+## 🏃 Step 1: pronative.ai Environment Doctor
 
-* Install **pronative.ai Environment Doctor**: Run below command from **POWERSHELL** in `ADMIN` mode (Refer [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor) for additional details.).
+* **Install Environment Doctor:** Run the below command from **POWERSHELL** in `ADMIN` mode. 
+* **Additional details:** Refer to the [@pronative.ai/doctor npm package](https://www.npmjs.com/package/@pronative.ai/doctor).
 
 ```powershell
 irm https://api.doctor.pronative.ai/win | iex
-
 ```
-### Step 2: Generate a GitHub Personal Access Token (PAT):
 
-* GitHub Auth token (Classic PAT): Generate a GitHub Personal Access Token (PAT).
+---
 
-In the upper-right corner of any page on GitHub, click your **profile** picture, then click  **Settings**.
+## 🔑 Step 2: Generate a GitHub Personal Access Token (PAT)
 
-In the left sidebar, click  **Developer settings**.
+* **GitHub Auth token:** Generate a GitHub Personal Access Token (Classic PAT) by following these UI steps:
 
-In the left sidebar, under  **Personal access tokens**, click **Fine-grained tokens**.
+1. **Open Settings:** In the upper-right corner of any page on GitHub, click your **profile picture**, then click <kbd>Settings</kbd>.
+2. **Access Developer Settings:** In the left sidebar, click <kbd>Developer settings</kbd>.
+3. **Select Token Type:** In the left sidebar, under **Personal access tokens**, click <kbd>Fine-grained tokens</kbd>.
+4. **Create Token:** Click the <kbd>Generate new token</kbd> button.
+5. **Name Your Token:** Under **Token name**, enter a memorable name for the token.
+6. **Enable Scopes:** Check the boxes to enable the following **SCOPES**:
+   * `repo`
+   * `workflow`
+   * `write:packages`
+   * `delete:packages`
+7. **Finalize Generation:** Scroll down to the end of the page and click the <kbd>Generate Token</kbd> button.
 
-Click **Generate new token**.
-
-Under Token name, enter a name for the token.
-
-Enable the following **SCOPES** - `repo`, `workflow`, `write:packages`,`delete:packages`.
-
-Finally, scroll down to the end and click **Generate Token** button
-
-**NOTE:**  Copy & keep the `TOKEN` handy
+> [!IMPORTANT]
+> Copy & keep the `TOKEN` handy. You will not be able to see it again.
 
 ![](../images/GitHub-PAT.png)
 
+---
 
-
-### Step 3: Configure your GitHub authentication token as a system environment variable:
+## 💻 Step 3: Configure your GitHub authentication token as a system environment variable
 
 **Windows PowerShell:**
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "your_personal_access_token_here", "User")
-
 ```
 
-## Step 4: Setup custom models in your Local OpenCode
+---
+
+## 🤖 Step 4: Setup custom models in your Local OpenCode
 
 ### Update opencode pronative.ai Models configuration
 
-* GO TO `C:\Users\`<your_login_accountname>`\.config\opencode`
-* RENAME the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
-* DOWNLOAD the `opencode.jsonc` file shared in MS TEAMS session
-* MOVE the `opencode.jsonc` downloaded file to this path `C:\Users\`<your_login_accountname>`\.config\opencode`
+* **Navigate to path:** Go to `C:\Users\<your_login_accountname>\.config\opencode`
+* **Backup existing config:** Rename the existing `opencode.jsonc` file to `opencode.jsonc.bkp`
+* **Download new config:** Download the updated `opencode.jsonc` file shared in your MS Teams session.
+* **Deploy new config:** Move the freshly downloaded `opencode.jsonc` file into `C:\Users\<your_login_accountname>\.config\opencode`
 
-**NOTE:** Post session you can revert back to the original file ( `opencode.jsonc.bkp`)
+> [!TIP]
+> **Post-session cleanup:** You can safely revert back to your original configuration later by restoring the `opencode.jsonc.bkp` file.
 
-# VERIFICATION (Refer to FAQ for troubleshooting) 
+---
 
-### Environment Presence Check
-* Verify **PRONATIVE_GH_TOKEN** in ENVIRONMENT VARIABLES
+# ✅ VERIFICATION 
 
+> [!NOTE]
+> If any verification step fails, please refer to the **FAQ** section for step-by-step troubleshooting.
 
-### GitHub Connectivity & Scope Validation Test
-* GitHub Connectivity & Scope Validation Test
+### 🔍 Environment Presence Check
+* **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
 
-* NOTE - Open **Windows Powershell** (Not the COMMAND PROMPT)
+### 🌐 GitHub Connectivity & Scope Validation Test
+* **Run Validation Test:** Open **Windows PowerShell** (do not use the standard Command Prompt) and execute the following command:
 
-```bash
-curl -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
+```powershell
+curl -sI -H "Authorization: token \$env:PRONATIVE_GH_TOKEN" https://api.github.com/user
 ```
-
-
-
-
