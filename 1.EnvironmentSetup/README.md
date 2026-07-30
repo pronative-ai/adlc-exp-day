@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-* Install PronativeAI Environment Doctor: Run below command from powershell in Admin mode (Refer [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor) for additional details.).
+* Install pronative.ai Environment Doctor: Run below command from powershell in Admin mode (Refer [https://www.npmjs.com/package/@pronative.ai/doctor](https://www.npmjs.com/package/@pronative.ai/doctor) for additional details.).
 
 ```powershell
 irm https://api.doctor.pronative.ai/win | iex
@@ -34,3 +34,14 @@ irm https://api.doctor.pronative.ai/win | iex
 * Rename the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
 * Move the `opencode.jsonc` file shared by Presenter to the path
 * Note: Post Handson session you can revert back to the original file
+
+# Verification
+
+### Environment Presence Check
+* Verify PRONATIVE_GH_TOKEN
+
+### GitHub Connectivity & Scope Validation Test
+* GitHub Connectivity & Scope Validation Test
+```bash
+curl -sI -H "Authorization: token $PRONATIVE_GH_TOKEN" https://api.github.com/user
+```
