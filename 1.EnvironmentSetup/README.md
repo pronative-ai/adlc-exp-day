@@ -29,11 +29,11 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ### Update opencode pronative.ai Models configuration
 
-* Download the `opencode.jsonc` file shared by Presenter
-* Replace with your login name in  `C:\Users\<your_login_accountname>\.config\opencode` and navigate to the folder path.
-* Rename the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
-* Move the `opencode.jsonc` file shared by Presenter to the path
-* Note: Post Handson session you can revert back to the original file
+* GO TO `C:\Users\`<your_login_accountname>`\.config\opencode`
+* RENAME the exisitng `opencode.jsonc` to `opencode.jsonc.bkp`
+* DOWNLOAD the `opencode.jsonc` file shared in MS TEAMS session
+* MOVE the `opencode.jsonc` downloaded file to this path `C:\Users\`<your_login_accountname>`\.config\opencode`
+  **NOTE:** Post session you can revert back to the original file ( `opencode.jsonc.bkp`)
 
 # Verification
 
