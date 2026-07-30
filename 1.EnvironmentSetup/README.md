@@ -28,6 +28,7 @@ Finally, scroll down to the end and click **Generate Token** button
 
 **NOTE:**  Copy & keep the `TOKEN` handy
 
+GitHub-PAT.png
 
 ### Step 3: Configure your GitHub authentication token as a system environment variable:
 
