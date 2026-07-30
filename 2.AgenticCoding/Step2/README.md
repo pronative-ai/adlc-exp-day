@@ -21,7 +21,7 @@ https://github.com/pronative-ai/adlc-exp-day-step2
 Then accept all the default values and click on <kbd>Create Fork</kbd> button
 
 4. Copy URL to Clone
-
+![](../../../images/fork.jpg)
 
 ### 📥 Cloning to Your Machine
 Open your standard **Command Prompt** (CMD) and execute the following commands sequentially to clone and open the project:
