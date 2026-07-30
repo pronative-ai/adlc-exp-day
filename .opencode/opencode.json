@@ -6,20 +6,20 @@
         "apiKey": "",
         "resourceName": "aif-adlc-blr"
       },
-    "opencode": {
-      "models": {
-        "big-pickle": {
-          "name": "big-pickle"
+      "opencode": {
+        "models": {
+          "big-pickle": {
+            "name": "big-pickle"
+          }
         }
       }
+    },
+    "model": "opencode/big-pickle",
+    "plugin": [
+      "@devtheops/opencode-plugin-otel"
+    ],
+    "experimental": {
+      "openTelemetry": true
     }
-  },
-  "model": "opencode/big-pickle",
-  "plugin": [
-    "@devtheops/opencode-plugin-otel"
-  ],
-  "experimental": {
-    "openTelemetry": true
   }
 }
- 
