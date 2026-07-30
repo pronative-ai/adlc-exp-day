@@ -5,6 +5,7 @@
 * **Failure State:** If `PRONATIVE_GH_TOKEN` is missing, empty, or undefined in the current system environment, stop execution immediately and print:
 > "Error: PRONATIVE_GH_TOKEN environment variable is missing or undefined. Please configure it in your system environment variables, restart your terminal session, and try again."
 
+![](../../images/GH-TOKEN.png)
 
 * **Step 2: GitHub Connectivity & Scope Validation Test**
 * **Requirement:** Once the variable is found, you must test its validity and verify that the necessary authorization scopes (`repo`, `workflow`, `write:packages`,`delete:packages`) are active. You must fetch the HTTP response headers by querying the GitHub user endpoint.
