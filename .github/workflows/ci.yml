@@ -53,7 +53,7 @@ jobs:
       - name: Build backend
         run: dotnet build -c Release
 
-  code-review:
+  pr-review:
     if: always()
     needs: [build-frontend, build-backend]
     runs-on: ubuntu-latest
@@ -74,8 +74,8 @@ jobs:
               "commit_sha": "${{ github.sha }}"
             }'
 
-      - name: Trigger PR Code Review + Critic
-        id: code-review
+      - name: Trigger PR Review + Critic
+        id: pr-review
         if: github.event_name == 'pull_request' && always()
         env:
           PRONATIVE_REVIEW_URL: https://ca-adlc-blr-2608-agents.grayrock-0cea75cd.centralindia.azurecontainerapps.io
@@ -89,13 +89,13 @@ jobs:
               \"commit_sha\": \"${{ github.event.pull_request.head.sha }}\",
               \"enable_critic\": true
             }")
-          echo "Code Review response: $response"
+          echo "PR Review response: $response"
           report_id=$(echo "$response" | jq -r '.agent_report.report_id // .agent_report.id // empty')
           echo "report_id=$report_id" >> "$GITHUB_OUTPUT"
           critic_applied=$(echo "$response" | jq -r '.agent_report.critic_applied // false')
           echo "critic_applied=$critic_applied" >> "$GITHUB_OUTPUT"
           status=$(echo "$response" | jq -r '.agent_report.status // .status // empty')
           if [ "$status" = "error" ] || [ "$status" = "unauthorized" ] || [ "$status" = "not_found" ]; then
-            echo "Code review request failed with status: $status"
+            echo "PR review request failed with status: $status"
             exit 1
           fi
