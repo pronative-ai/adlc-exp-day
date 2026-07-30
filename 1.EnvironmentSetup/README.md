@@ -46,6 +46,11 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ## 🤖 Step 4: Setup custom models in your Local OpenCode
 
+> [!IMPORTANT]
+> ### 📁 Required Configuration File
+> The custom `opencode.jsonc` file will be shared directly by the instructor through your **MS Teams** session chat. Make sure to download it locally before proceeding to the steps below.
+
+
 ### Update opencode pronative.ai Models configuration
 
 * **Navigate to path:** Go to `C:\Users\<your_login_accountname>\.config\opencode`
