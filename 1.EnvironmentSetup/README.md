@@ -61,7 +61,7 @@ Finally, scroll down to the end and click **Generate Token** button
 ### GitHub Connectivity & Scope Validation Test
 * GitHub Connectivity & Scope Validation Test
 ```bash
-curl -sI -H "Authorization: token $PRONATIVE_GH_TOKEN" https://api.github.com/user
+curl -sI -H "Authorization: token %PRONATIVE_GH_TOKEN%" https://api.github.com/user
 ```
 
 
