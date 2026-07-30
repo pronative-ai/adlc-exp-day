@@ -22,7 +22,7 @@ irm https://api.doctor.pronative.ai/win | iex
 1. **Open Settings:** In the upper-right corner of any page on GitHub, click your **profile picture**, then click <kbd>Settings</kbd>.
 2. **Access Developer Settings:** In the left sidebar, click <kbd>Developer settings</kbd>.
 3. **Select Token Type:** In the left sidebar, under **Personal access tokens**, click <kbd>Tokens (Classic)</kbd>.
-4. **Create Token:** Click the <kbd>Generate new token</kbd> button.
+4. **Create Token:** Click the <kbd>Generate new token (Classic)</kbd> button.
 5. **Name Your Token:** Under **Token name**, enter a memorable name for the token.
 6. **Enable Scopes:** Check the boxes to enable the following **SCOPES**:
    * `repo`
