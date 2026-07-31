@@ -49,6 +49,8 @@ irm https://api.doctor.pronative.ai/win | iex
 ## 🔑 Step 2: Generate a GitHub Personal Access Token (PAT) and Configure it as an Environment variable
 
 * **GitHub Auth token:** Generate a GitHub Personal Access Token (Classic PAT) by following these UI steps:
+> [!IMPORTANT]
+> Use only Tokens (Classic) option
 
 1. **Open Settings:** In the upper-right corner of any page on GitHub, click your **profile picture**, then click <kbd>Settings</kbd>.
 2. **Access Developer Settings:** In the left sidebar, click <kbd>Developer settings</kbd>.
@@ -61,6 +63,10 @@ irm https://api.doctor.pronative.ai/win | iex
    * `write:packages`
    * `delete:packages`
 7. **Finalize Generation:** Scroll down to the end of the page and click the <kbd>Generate Token</kbd> button.
+
+> [!TIP]
+> Selety first 4 scopes in the - repo, workflow, write:packages and delete:packages
+
 
 > [!IMPORTANT]
 > Copy & keep the `TOKEN` handy for **next step** for configuration. You will not be able to see it again.
