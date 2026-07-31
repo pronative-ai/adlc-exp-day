@@ -27,6 +27,8 @@ Then accept all the default values and click on <kbd>Create Fork</kbd> button
 Open your standard **Command Prompt** (CMD) or **Terminal session in your VS Code** to execute the following commands sequentially to clone and open the project:
 
 #### Clone your personal fork of the repository
+> [!TIP]
+> Use the URL copied as indicated in the image above which already contains your **GITHUB User Name**
 ```bash
 git clone https://github.com/<your-github-username>/adlc-exp-day-step2.git
 ```
