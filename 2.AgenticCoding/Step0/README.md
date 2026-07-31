@@ -20,7 +20,8 @@
 ### 📝 Step 2: Prepare your own PROMPT or INTENT for the Agentic Coding Agent
 
 * Build this. However you normally would
+* Execute in OpenCode with default settings
 
-### 🔍 Step 3: Review the files created
+### 🔍 Step 3: Review the files created based on your PROMPT or INTENT
 
-* If required, persist to your GitHub repo for reference
+* If required, push the files to your GitHub repo for reference
