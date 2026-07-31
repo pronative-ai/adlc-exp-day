@@ -80,8 +80,10 @@ Open **Windows PowerShell** and execute the following command after replacing it
 [Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "your_personal_access_token_here", "User")
 ```
 ![](../images/pat-ps.jpg)
----
 
+> [!NOTE]
+> PAT token MUST be included within the QUOTES as indicated below
+---
 # ✅ VERIFICATION 
 
 > [!NOTE]
