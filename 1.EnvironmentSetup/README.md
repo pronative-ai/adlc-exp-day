@@ -39,9 +39,18 @@ To configure the tools listed below, you must execute the setup commands using *
 2. Type `PowerShell`.
 3. Right-click **Windows PowerShell** and select **Run as administrator**.
 
-Copy and execute this command
+### Copy and execute this command
 ```powershell
 irm https://api.doctor.pronative.ai/win | iex
+```
+
+> [!NOTE]
+> You may get this ERROR - You cannot run this script on the current system.
+> For more information about running scripts and setting **execution policy**, see about_Execution_Policies
+
+### Execute the following and run the previous command
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 ---
