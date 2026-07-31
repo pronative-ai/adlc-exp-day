@@ -1,19 +1,7 @@
 # # STEP 2 - Agentic DevOps (Outer loop) Playbook
 
 ---
-
-### 📋 Step 1: Open the GitHub repo in VS Code (where inner loop ran) and then Run make file to setup configuration required to collect Agent metrics:
-
-* Open the `make` file in root folder
-* Update placeholder for participant with your enrollment id (e.g. replace `<ENROLLMENT_ID>` with `ST-2608-adlc101`) and save the file
-* Run the command `make run` from VS Code terminal
-
-> [!IMPORTANT]
-> **Note:** Remember to run above command each time when VS code is reopned/restarted
-
----
-
-### 🔐 Step 2: Secrets (GitHub Actions > Secrets)
+### 🔐 Step 1: Secrets (GitHub Actions > Secrets)
 
 These must be added manually:
 
@@ -26,12 +14,14 @@ These must be added manually:
 
 ```sh
 gh secret set GHCR_PAT --body <generated-earlier>
+```
+```sh
 gh secret set CLIENT_SECRET --body <client-secret>
 ```
 
 ---
 
-### ⚙️ Step 3: Run script to create variables required for outerloop:
+### ⚙️ Step 2: Run script to create variables required for outerloop:
 
 * Follow instructions `env.example` in root folder to save `.env`
 * Navigate to `scripts` folder from VS Code terminal
