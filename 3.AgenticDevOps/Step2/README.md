@@ -65,10 +65,21 @@ This will trigger the CI (Continuous Integration) in your GitHub repo.
 > [!TIP]
 > Critic Agent will review the code review agent's analysis and provide its analysis.
 
-The CI's run can be viewed from GitHub repo's actions.
+> [!IMPORTANT]
+> Enable WORKFLOWS in GitHub Actions
+
+![](../../images/github-actions.jpg)
+
+
+The CI's run can be viewed from GitHub repo's Actions.
+
+### ⚠️ Create the Pull Request via GitHub CLI
+> [!TIP]
+> It is recommended to use CLI instead of GitHub web application so that the feature branch is attached correctly
+
+#### Go to VS Code and execute the following in the Terminal
 
 ```bash
-# Create the Pull Request via GitHub CLI
 gh pr create \
   --title "Feat: Implement architecture plan from spec.md" \
   --body "Triggering Outer Loop CI. Code Review Agent and Critic Agent please analyze." \
@@ -86,9 +97,17 @@ The CD run will build both frontend and backend.
 Prepare docker containers and push to registry, then it will deploy to the azure container app.
 Refer GitHub Action run's summary.
 
+![](../../images/pull-request.jpg)
+
 > [!TIP]
 > Azure Container App URL can be found here
 
-Use it in the browser to view the frontend application UI.
+![](../../images/deploy-summary.jpg)
+
+
+> [!TIP]
+> Use it in the browser to view the frontend application UI.
+
+![](../../images/app-ui.jpg)
 
 ## 🏁 Concludes OUTER LOOP
