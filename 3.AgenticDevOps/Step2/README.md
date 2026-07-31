@@ -30,6 +30,7 @@ gh secret set CLIENT_SECRET --body <client-secret>
 
 > [!IMPORTANT]
 > Copy and Paste the PAT & Client Secret as is and do not leave space which can affect the deployment process
+![](../../images/select-repo.jpg)
 
 ---
 
@@ -37,8 +38,11 @@ gh secret set CLIENT_SECRET --body <client-secret>
 
 * Follow instructions `env.example` in root folder to save `.env`
 * Navigate to `scripts` folder from VS Code terminal
-* Run `Initialize-GitHubVariables.ps1`
 
+* Copy & Paste to execute the following:
+```sh
+./Initialize-GitHubVariables.ps1
+```
 ---
 
 ## 🚀 Triggering the Outer loop
