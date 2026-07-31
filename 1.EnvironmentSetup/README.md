@@ -74,12 +74,12 @@ irm https://api.doctor.pronative.ai/win | iex
 > [!IMPORTANT]
 > Use the `TOKEN` from **previous step** to set as an environment variable
 
-Open **Windows PowerShell** and execute the following command:
+Open **Windows PowerShell** and execute the following command after replacing it with the PAT token as indicated below:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "your_personal_access_token_here", "User")
 ```
-
+![](../images/pat-ps.jpg)
 ---
 
 # ✅ VERIFICATION 
