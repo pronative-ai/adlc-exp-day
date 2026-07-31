@@ -61,7 +61,7 @@ gh secret set CLIENT_SECRET --body <client-secret>
 * Copy & Paste to execute the following:
 
 ```sh
-./Initialize-GitHubVariables.ps1
+powershell -ExecutionPolicy Bypass -File .\Initialize-GitHubVariables.ps1
 ```
 ---
 
