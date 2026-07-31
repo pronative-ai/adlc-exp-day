@@ -11,13 +11,25 @@ These must be added manually:
 | **`GHCR_PAT`** | GitHub classic PAT generated earlier |
 
 **(or)**
+> [!IMPORTANT]
+> Use Terminal in VS Code to execute the following
+
+> [!TIP]
+> If you do not remember where your stored the PAT then go to Environment Variable settings to find "PRONATIVE_GH_TOKEN"
 
 ```sh
 gh secret set GHCR_PAT --body <generated-earlier>
 ```
+
+> [!IMPORTANT]
+> Client secret will be shared in the MS Teams session
+
 ```sh
 gh secret set CLIENT_SECRET --body <client-secret>
 ```
+
+> [!IMPORTANT]
+> Copy and Paste the PAT & Client Secret as is and do not leave space which can affect the deployment process
 
 ---
 
@@ -29,13 +41,18 @@ gh secret set CLIENT_SECRET --body <client-secret>
 
 ---
 
-## 🚀 Triggering the Outerloop
+## 🚀 Triggering the Outer loop
 
 ### 🔁 Step 1: Create pull request from feature branch to main branch in GitHub
 
-This will trigger the CI (Continuous Integration) in GitHub repo.
-Code review agent will review the code provide comments in pull request description.
-Critic Agent will review the code review agent's analysis and provide its analysis.
+This will trigger the CI (Continuous Integration) in your GitHub repo.
+
+> [!TIP]
+> Code review agent will review the code provide comments in pull request description.
+
+> [!TIP]
+> Critic Agent will review the code review agent's analysis and provide its analysis.
+
 The CI's run can be viewed from GitHub repo's actions.
 
 ```bash
@@ -50,10 +67,16 @@ gh pr create \
 ### 🔀 Step 2: Merge the pull request created in previous step
 
 This will trigger the CD (Continuous Delivery) in GitHub.
-The CD's run can be viewed from GitHub repo's actions.
+> [!TIP]
+> CD run can be viewed from GitHub repo's actions.
+
 The CD run will build both frontend and backend.
 Prepare docker containers and push to registry, then it will deploy to the azure container app.
-Refer GitHUb Action run's summary.
-Azure Container App URL can be found.
+Refer GitHub Action run's summary.
+
+> [!TIP]
+> Azure Container App URL can be found here
 
 Use it in the browser to view the frontend application UI.
+
+## 🏁 Concludes OUTER LOOP
