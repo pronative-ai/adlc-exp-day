@@ -71,6 +71,7 @@ Follow these UI steps inside VS Code to initialize the architectural planning st
 ![](../../images/spec-agent.jpg)
    
 **Confirm Selection:** Press <kbd>Enter</kbd> to bind the agent to your active session.
+
 **Execute Planning:** Copy and paste the exact prompt below into the chat panel to generate your architectural spec:
 
 ```text
@@ -101,7 +102,9 @@ Process `intent\input-spec-agent.md` file.
 
 ---
 
-### 🤖 2️⃣ Load the Custom Model (`pronative.ai GPT Nano`)
+### 🤖 2️⃣ Load the Custom Model (`pronative.ai GPT Nano`) 
+> [!IMPORTANT]
+> IMPLEMENTATION DONE USING GPT-5.4-NANO
 
 * **Open Models Menu:** Type `/models` in the chat panel.
 * **Search for Model:** Enter `pronative` in the search box.
@@ -114,6 +117,7 @@ Process `intent\input-spec-agent.md` file.
 ---
 
 ### 🌿 3️⃣ Prepare your feature branch for Implementation
+### ⚠️ PERFORM IMPLEMENTATION ONLY IN YOUR FEATURE BRANCH
 
 > [!IMPORTANT]
 > Create and switch to a new feature branch
@@ -122,6 +126,7 @@ git checkout -b feature/agent-build
 ```
 
 * **Run Prompt:** Paste the exact prompt below into the chat panel to instruct the Build agent to compile and execute your newly generated architecture plan:
+
 
 ```text
 Implement the plan from spec md file under `spec` folder.
