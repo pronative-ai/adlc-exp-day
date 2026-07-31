@@ -71,7 +71,10 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ## 💻 Step 3: Configure your GitHub authentication token as a system environment variable
 
-**Windows PowerShell:**
+> [!IMPORTANT]
+> Use the `TOKEN` from **previous step 3** to set as an environmrnt variable
+
+Open **Windows PowerShell** and execute the following command:
 
 ```powershell
 [Environment]::SetEnvironmentVariable("PRONATIVE_GH_TOKEN", "your_personal_access_token_here", "User")
