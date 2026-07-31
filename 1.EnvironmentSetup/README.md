@@ -111,8 +111,10 @@ curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.githu
 
 > [!IMPORTANT]
 > ### 📁 Required Configuration File
-> The custom `opencode.jsonc` file will be shared directly by the instructor through your **MS Teams** session chat. Make sure to download it locally before proceeding to the steps below.
+> The custom `opencode.jsonc` file will be shared directly by the instructor through your **MS Teams** session chat.
 
+> [!NOTE]
+> Check for the **opencode.jsonc** in your **MS TEAMS** session. Make sure to **DOWNLOAD** it locally before proceeding to the steps below.
 
 ### Update opencode pronative.ai Models configuration
 
