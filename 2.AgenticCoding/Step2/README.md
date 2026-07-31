@@ -67,8 +67,11 @@ Follow these UI steps inside VS Code to initialize the architectural planning st
 2. **Open Agents Menu:** Type `/agents` in the chat panel overlay.
 3. **Search for Agent:** Enter `pronative.ai Spec Agent` into the search field.
 4. **Select Agent:** Scroll through the filtered list and highlight `Spec-Agent`.
-5. **Confirm Selection:** Press <kbd>Enter</kbd> to bind the agent to your active session.
-6. **Execute Planning:** Copy and paste the exact prompt below into the chat panel to generate your architectural spec:
+
+![](../../images/spec-agent.jpg)
+   
+**Confirm Selection:** Press <kbd>Enter</kbd> to bind the agent to your active session.
+**Execute Planning:** Copy and paste the exact prompt below into the chat panel to generate your architectural spec:
 
 ```text
 Process `intent\input-spec-agent.md` file.
@@ -89,6 +92,9 @@ Process `intent\input-spec-agent.md` file.
 * **Open Agents Menu:** Type `/agents` in the chat panel.
 * **Search for Build:** Enter `build` in the search box to exit the spec-agent context.
 * **Select Agent:** Scroll through the agent list and select the native `Build` agent.
+  
+![](../../images/build-native.jpg)
+
 * **Confirm:** Press <kbd>Enter</kbd> to activate the Agentic Coding Agent.
 
 ---
@@ -98,6 +104,9 @@ Process `intent\input-spec-agent.md` file.
 * **Open Models Menu:** Type `/models` in the chat panel.
 * **Search for Model:** Enter `pronative` in the search box.
 * **Select Custom Model:** Scroll through the model list and select `pronative.ai GPT Nano`.
+
+![](../../images/model-select.jpg)
+  
 * **Confirm:** Press <kbd>Enter</kbd> to lock in the custom code-generation model.
 
 ---
