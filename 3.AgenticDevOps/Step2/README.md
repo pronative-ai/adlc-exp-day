@@ -1,5 +1,11 @@
 # # STEP 2 - Agentic DevOps (Outer loop) Playbook
 
+### ⚠️ PREREQUISITES
+> [!IMPORTANT]
+> Login to GitHub CLI using Terminal in VS Code
+
+![](../../images/gh-login.jpg)
+
 ---
 ### 🔐 Step 1: Secrets (GitHub Actions > Secrets)
 
