@@ -6,9 +6,40 @@
 
 ## 🏃 Step 1: pronative.ai Environment Doctor
 
-* **Install Environment Doctor:** Run the below command from **POWERSHELL** in `ADMIN` mode. 
+* **Installs** and **Verifies** the required tools
 * **Additional details:** Refer to the [@pronative.ai/doctor npm package](https://www.npmjs.com/package/@pronative.ai/doctor).
 
+## Required Tool Versions
+
+| Tool Name | Expected |
+| :--- | :--- |
+| Node.js (Runtime) | v24.0.0 |
+| npm (Package Manager) | v11.0.0 |
+| npx (Package Executor) | v11.0.0 |
+| GNU Make | v4.0.0 |
+| Git CLI | v2.30.0 |
+| GitHub CLI | v2.0.0 |
+| Visual Studio Code | v1.80.0 |
+| Azure CLI | v2.50.0 |
+| OpenCode CLI | v1.17.13 |
+
+---
+
+# Prerequisites
+
+> [!IMPORTANT]
+> A valid **STUDENT ID** is strictly required to proceed with the setup.
+
+## Execution Requirements
+
+To configure the tools listed below, you must execute the setup commands using **Windows PowerShell** with **Administrator privileges**. 
+
+### How to open PowerShell as Admin:
+1. Press the **Windows Key**.
+2. Type `PowerShell`.
+3. Right-click **Windows PowerShell** and select **Run as administrator**.
+
+Copy and execute this command
 ```powershell
 irm https://api.doctor.pronative.ai/win | iex
 ```
@@ -48,6 +79,23 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ---
 
+# ✅ VERIFICATION 
+
+> [!NOTE]
+> If any verification step fails, please refer to the [FAQ](https://github.com/pronative-ai/adlc-exp-day/blob/main/1.EnvironmentSetup/Troubleshooting/FAQ.md#-faq---verification-check). section for step-by-step troubleshooting.
+
+### 🔍 Environment Presence Check
+* **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
+
+### 🌐 GitHub Connectivity & Scope Validation Test
+* **Run Validation Test:** Open **Windows PowerShell** (do not use the standard Command Prompt) and execute the following command:
+
+```powershell
+curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
+```
+
+---
+
 ## 🤖 Step 4: Setup custom models in your Local OpenCode
 
 > [!IMPORTANT]
@@ -66,18 +114,3 @@ irm https://api.doctor.pronative.ai/win | iex
 > **Post-session cleanup:** You can safely revert back to your original configuration later by restoring the `opencode.jsonc.bkp` file.
 
 ---
-
-# ✅ VERIFICATION 
-
-> [!NOTE]
-> If any verification step fails, please refer to the [FAQ](https://github.com/pronative-ai/adlc-exp-day/blob/main/1.EnvironmentSetup/Troubleshooting/FAQ.md#-faq---verification-check). section for step-by-step troubleshooting.
-
-### 🔍 Environment Presence Check
-* **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
-
-### 🌐 GitHub Connectivity & Scope Validation Test
-* **Run Validation Test:** Open **Windows PowerShell** (do not use the standard Command Prompt) and execute the following command:
-
-```powershell
-curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
-```
