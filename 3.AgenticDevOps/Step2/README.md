@@ -51,9 +51,15 @@ gh secret set CLIENT_SECRET --body <client-secret>
 ### ⚙️ Step 2: Run script to create variables required for outerloop:
 
 * Follow instructions `env.example` in root folder to save `.env`
+
+> [!IMPORTANT]
+> UPDATE STUDENT ID here - **ENROLLMENT_ID= ST-2608-adlc1XXX** in the .env file
+
+### Now, script needs to be executed for environment variables aligned to your STUDENT ID
 * Navigate to `scripts` folder from VS Code terminal
 
 * Copy & Paste to execute the following:
+
 ```sh
 ./Initialize-GitHubVariables.ps1
 ```
