@@ -123,6 +123,8 @@ curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.githu
 * **Download new config:** Download the updated `opencode.jsonc` file shared in your MS Teams session.
 * **Deploy new config:** Move the freshly downloaded `opencode.jsonc` file into `C:\Users\<your_login_accountname>\.config\opencode`
 
+![](../images/opencode-config.jpg)
+
 > [!TIP]
 > **Post-session cleanup:** You can safely revert back to your original configuration later by restoring the `opencode.jsonc.bkp` file.
 
