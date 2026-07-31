@@ -24,16 +24,18 @@ Then accept all the default values and click on <kbd>Create Fork</kbd> button
 ![](../../images/fork.jpg)
 
 ### 📥 Cloning to Your Machine
-Open your standard **Command Prompt** (CMD) and execute the following commands sequentially to clone and open the project:
+Open your standard **Command Prompt** (CMD) or **Terminal session in your VS Code** to execute the following commands sequentially to clone and open the project:
 
+#### Clone your personal fork of the repository
 ```bash
-# Clone your personal fork of the repository
 git clone https://github.com/<your-github-username>/adlc-exp-day-step2.git
-
-# Move into the project directory
+```
+#### Move into the project directory
+```bash
 cd adlc-exp-day-step2
-
-# Open the project inside Visual Studio Code
+```
+#### Open the project inside Visual Studio Code
+```bash
 code .
 ```
 
@@ -68,7 +70,7 @@ Process `intent\input-spec-agent.md` file.
 ```
 
 > [!TIP]
-> Once processing is finalized, a brand new Markdown specification file will automatically appear under your workspace `spec/` folder.
+> Once processing is finalized, a new Markdown specification file will automatically appear under your workspace `spec/` folder.
 
 ---
 
@@ -122,7 +124,8 @@ git add .
 ```bash
 git commit -m "feat: Feature implemented by Agentic Coding Agent using pronative.ai GPT Nano model"
 ```
-
+---
+# ⚠️ ATTENTION: DO NOT RAISE A PULL REQUEST
 ### 🚀 Push the branch to GitHub
 
 ```bash
