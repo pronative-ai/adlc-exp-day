@@ -77,7 +77,7 @@ Follow these UI steps inside VS Code to initialize the architectural planning st
 Process `intent\input-spec-agent.md` file.
 ```
 
-![](../../images/intent.jpg)
+![](../../images/inten.jpg)
 
 > [!TIP]
 > Once processing is finalized, a new Markdown specification file will automatically appear under your workspace `spec/` folder.
