@@ -32,6 +32,9 @@ Open your standard **Command Prompt** (CMD) or **Terminal session in your VS Cod
 ```bash
 git clone https://github.com/<your-github-username>/adlc-exp-day-step2.git
 ```
+> [!IMPORTANT]
+> Clone will be executed in your user profile path
+
 #### Move into the project directory
 ```bash
 cd adlc-exp-day-step2
