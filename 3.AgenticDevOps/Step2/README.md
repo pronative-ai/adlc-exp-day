@@ -92,11 +92,7 @@ The CI's run can be viewed from GitHub repo's Actions.
 #### Go to VS Code and execute the following in the Terminal
 
 ```bash
-gh pr create \
-  --title "Feat: Implement architecture plan from spec.md" \
-  --body "Triggering Outer Loop CI. Code Review Agent and Critic Agent please analyze." \
-  --base main \
-  --head feature/agent-build
+gh pr create --title "Feat: Implement architecture plan from spec.md" --body "Triggering Outer Loop CI. Code Review Agent and Critic Agent please analyze." --base main --head feature/agent-build
 ```
 
 ### 🔀 Step 2: Merge the pull request created in previous step
