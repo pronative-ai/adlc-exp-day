@@ -46,7 +46,7 @@ irm https://api.doctor.pronative.ai/win | iex
 
 ---
 
-## 🔑 Step 2: Generate a GitHub Personal Access Token (PAT)
+## 🔑 Step 2: Generate a GitHub Personal Access Token (PAT) and Configure it as an Environment variable
 
 * **GitHub Auth token:** Generate a GitHub Personal Access Token (Classic PAT) by following these UI steps:
 
@@ -63,16 +63,16 @@ irm https://api.doctor.pronative.ai/win | iex
 7. **Finalize Generation:** Scroll down to the end of the page and click the <kbd>Generate Token</kbd> button.
 
 > [!IMPORTANT]
-> Copy & keep the `TOKEN` handy for **next step 3**. You will not be able to see it again.
+> Copy & keep the `TOKEN` handy for **next step** for configuration. You will not be able to see it again.
 
 ![](../images/GitHub-PAT.png)
 
 ---
 
-## 💻 Step 3: Configure your GitHub authentication token as a system environment variable
+## Configure your GitHub authentication token as a system environment variable
 
 > [!IMPORTANT]
-> Use the `TOKEN` from **previous step 3** to set as an environmrnt variable
+> Use the `TOKEN` from **previous step** to set as an environment variable
 
 Open **Windows PowerShell** and execute the following command:
 
@@ -99,7 +99,7 @@ curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.githu
 
 ---
 
-## 🤖 Step 4: Setup custom models in your Local OpenCode
+## 🤖 Step 3: Setup custom models in your Local OpenCode
 
 > [!IMPORTANT]
 > ### 📁 Required Configuration File
