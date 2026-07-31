@@ -7,12 +7,14 @@ These must be added manually:
 
 | Secret | Description |
 | :--- | :--- |
-| **`CLIENT_SECRET`** | Service principal secret (for Azure auth will be shared by Presenter) |
 | **`GHCR_PAT`** | GitHub classic PAT generated earlier |
+| **`CLIENT_SECRET`** | Service principal secret (for Azure auth will be shared by Presenter) |
 
 **(or)**
 > [!IMPORTANT]
 > Use Terminal in VS Code to execute the following
+
+### ⚠️ GitHub PAT Token
 
 > [!TIP]
 > If you do not remember where your stored the PAT then go to Environment Variable settings to find "PRONATIVE_GH_TOKEN"
@@ -20,6 +22,12 @@ These must be added manually:
 ```sh
 gh secret set GHCR_PAT --body <generated-earlier>
 ```
+> [!IMPORTANT]
+> Select your personal REPO as indicated below
+
+![](../../images/select-repo.jpg)
+
+### ⚠️ Azure Client Secret
 
 > [!IMPORTANT]
 > Client secret will be shared in the MS Teams session
@@ -30,7 +38,7 @@ gh secret set CLIENT_SECRET --body <client-secret>
 
 > [!IMPORTANT]
 > Copy and Paste the PAT & Client Secret as is and do not leave space which can affect the deployment process
-![](../../images/select-repo.jpg)
+
 
 ---
 
