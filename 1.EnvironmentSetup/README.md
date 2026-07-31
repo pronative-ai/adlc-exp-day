@@ -92,7 +92,7 @@ Open **Windows PowerShell** and execute the following command after replacing it
 ### 🔍 Environment Presence Check
 * **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
 
-Alternatively, check using the following script.
+Alternatively, check using the following script:
 
 ### 🌐 GitHub Connectivity & Scope Validation Test
 > [!NOTE]
@@ -118,7 +118,7 @@ curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.githu
 
 ### Update opencode pronative.ai Models configuration
 
-* **Navigate to path:** Go to `C:\Users\<your_login_accountname>\.config\opencode`
+* **Navigate to path:** Go to `C:\Users\<your_user_profile>\.config\opencode`
 * **Backup existing config:** Rename the existing `opencode.jsonc` file to `opencode.jsonc.bkp`
 * **Download new config:** Download the updated `opencode.jsonc` file shared in your MS Teams session.
 * **Deploy new config:** Move the freshly downloaded `opencode.jsonc` file into `C:\Users\<your_login_accountname>\.config\opencode`
