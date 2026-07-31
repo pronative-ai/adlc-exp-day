@@ -92,8 +92,14 @@ Open **Windows PowerShell** and execute the following command after replacing it
 ### 🔍 Environment Presence Check
 * **Verify Variable:** Confirm that `PRONATIVE_GH_TOKEN` is visible and correctly saved in your system's **ENVIRONMENT VARIABLES**.
 
+Alternatively, check using the following script.
+
 ### 🌐 GitHub Connectivity & Scope Validation Test
-* **Run Validation Test:** Open **Windows PowerShell** (do not use the standard Command Prompt) and execute the following command:
+> [!NOTE]
+> **Run Validation Test:** Close and Open a new **WINDOWS POWERSHELL** session and execute the following command:
+
+> [!IMPORTANT]
+> DO NOT use the standard COMMAND PROMPT
 
 ```powershell
 curl.exe -sI -H "Authorization: token $env:PRONATIVE_GH_TOKEN" https://api.github.com/user
