@@ -38,6 +38,7 @@ Agent's technical elaboration, not from this layer.
 - Restricted to specific stack versions: React (Vite/Node 24.*) and C#
   (**backend must target `net10.0` for build/test; CI must use `dotnet-version: 10.0.x`**).
 - Must adhere to a strict folder layout (`src/frontend` and `src/backend`).
+- A .NET solution file must always be generated at `src/backend/OuterloopLabApi.sln` via `dotnet new sln` + `dotnet sln add`, with the backend project added to it, and CI/build/test commands must invoke this `.sln` rather than the `.csproj` directly.
 - Deploy as a single Azure Container App using the sidecar pattern to host
   both frontend and backend.
 - Authenticate to Cosmos DB exclusively using token-based authentication via the pre-assigned User-Assigned Managed Identity, instantiated using `DefaultAzureCredential` configured with the specific `ManagedIdentityClientId`. Absolutely zero connection strings, master keys, or account keys are permitted in code, configurations, or logs.
